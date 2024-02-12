@@ -1,0 +1,50 @@
+             0 1 2  3  4  5  6
+int[] arr = {2,4,10,10,10,18,20};
+
+!!!!!!!!!!!  1st occurence code 
+
+int BS_1st(int[] arr, int target){
+	int low=0;
+	int high = arr.length-1;
+	itn res = -1;
+	
+	while(low<=high){
+		int mid = low + (high-low)/2;
+
+		if(arr[mid]==target){
+			res=mid;
+			high=mid-1;
+		}
+		if(target<arr[mid]){
+			high=mid-1;
+		}
+		else{
+			low=mid+1;
+		}
+	}
+	return -1;
+}
+
+!!!!!!!!!!! last occurence code
+
+int BS_1st(int[] arr, int target){
+	int low=0;
+	int high = arr.length-1;
+	itn res = -1;
+	
+	while(low<=high){
+		int mid = low + (high-low)/2;
+
+		if(arr[mid]==target){
+			res=mid;
+			low=mid+1;
+		}
+		if(target<arr[mid]){
+			high=mid-1;
+		}
+		else{
+			low=mid+1;
+		}
+	}
+	return -1;
+}

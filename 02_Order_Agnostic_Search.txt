@@ -1,0 +1,31 @@
+Order Agnostic Search - Means the array is sorted but dont know whether ascending or descending 
+
+
+int BS_Ascending(int[] arr, int target); //for ascending array
+int BS_Descending(int[] arr, int target); // for descending array
+
+
+int OA_search(int[] arr, int target){
+	if(arr.length==1){
+		if(arr[0]==target){
+			return 0;
+		}
+		else{
+			return -1;
+		}
+	}
+
+	if(arr[1]>arr[0]){ // means ascending
+		int ans  = BS_Ascending(arr, target);
+		return ans;
+	}
+
+	else{  // means Descending
+		int ans  = BS_Descending(arr, target);
+		return ans;
+	}
+
+	return -1;
+
+}
+

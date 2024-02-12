@@ -1,0 +1,29 @@
+Always on Sorted Array/Whenever there is a sorted array think of binary search
+
+
+Code: This is Binary Search for the array which is sorted but in ascending order. 
+
+int BS(int[] arr, int target){
+	int low=0;
+	int high=arr.length-1;
+
+	while(low<=high){
+		int mid = low + (high-low)/2;   // (2low + high -low)/2 -> (high+low)/2
+		
+		//If element is present at the middle itself
+		if(arr[mid]==target){
+			return mid;
+		}
+
+                // If the element is smaller than the middle element, then it can only be present in the left subarray
+		if(arr[mid]>target){
+			high=mid-1;
+		}
+		// Else the element can only be present in the right subarray
+		else{
+			low=mid+1;
+		}
+	}
+	// If the element is not present in the array
+	return -1;	
+}
