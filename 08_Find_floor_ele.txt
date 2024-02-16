@@ -1,0 +1,34 @@
+Find the floor element of the target element.
+int[] arr = {1,2,3,4,8,10,10,12,19}, target=5
+
+Soln: Finding the floor of target means finding the largest element amongst all the elements smaller than the target.
+
+
+int BS(int[] arr, int target){
+	int low=0;
+	int high=arr.length-1;
+	int flr = -1;
+
+	while(low<=high){
+		int mid = low + (high-low)/2;
+	
+		if(arr[mid]==target){
+			return arr[mid];  // means floor(5) = 5 
+		}
+		else if(arr[mid]<target){
+			flr=arr[mid]; // if the element is smaller than target, it is a candidate for floor of target
+			low=mid+1; // after having the candidate move to the side which has larger element. 
+		}
+		else{
+			high=mid-1;
+		}
+		
+	}
+	return flr;
+} 
+
+
+
+
+
+

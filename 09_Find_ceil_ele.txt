@@ -1,0 +1,34 @@
+Find the ceil element of the target element.
+int[] arr = {1,2,3,4,8,10,10,12,19}, target=5
+
+Soln: Finding the ceil of target means finding the smallest element amongst all the elements greater than the target.
+
+
+int BS(int[] arr, int target){
+	int low=0;
+	int high=arr.length-1;
+	int cel = -1;
+
+	while(low<=high){
+		int mid = low + (high-low)/2;
+	
+		if(arr[mid]==target){
+			return arr[mid];  // means ceil(5) = 5 
+		}
+		else if(arr[mid]>target){
+			cel = arr[mid]; // if the element is greater than target, it is a candidate for ceil of target.
+			high = mid-1; // after having the candidate move to the side which has smaller element. 
+		}
+		else{
+			low=mid+1;
+		}
+		
+	}
+	return flr;
+} 
+
+
+
+
+
+
