@@ -1,0 +1,15 @@
+Ques: A bitonic array is an array that is first increasing and then decreasing. Given an array of numbers which is first increasing 
+	and then decreasing, find the maximum value in the array.
+Input: a[] = {2, 4, 6, 8, 10, 3, 1}
+Output: 10
+
+Input: a[] = {3, 23, 10, 8, 7, 6}
+Output: 23
+
+
+Soln: This is same as finding the peak element. In peak element we can have more than one peak elements and we only have to return 
+	index of only 1 peak. 
+
+	In this there is only one peak element. 
+
+	Code is same.

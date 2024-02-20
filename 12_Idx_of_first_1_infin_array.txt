@@ -1,0 +1,30 @@
+Que: Index of first 1 in a Binary Sorted infinte array.
+ e.g. 0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,........
+
+Soln: This is combination of ele_infi_sorted_array + 1st_occurence_of_an elemt
+
+
+
+int modi_bs(int[] arr, int target){      //target is 1
+	int low=0;
+	int high =1; // modified from the normal BS
+	int res = -1;
+
+	while(target>arr[high]){
+		low=high;
+		high=high*2;
+	}
+
+	while(low<=high){
+		int mid = low + (high-low)/2;
+
+		if(arr[mid]==target){
+			res=mid;
+			high=mid-1;		
+		}
+		else{
+			low=mid+1;
+		}
+	}
+	return res;
+}

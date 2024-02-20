@@ -1,0 +1,24 @@
+Ques: Given a bitonic sequence of n distinct elements, and an integer x, the task is to write a program to find given element x in 
+the bitonic sequence.
+
+Input :  arr[] = {-3, 9, 18, 20, 17, 5, 1}, key = 20
+Output : Found at index 3
+
+Input :  arr[] = {5, 6, 7, 8, 9, 10, 3, 2, 1}, key = 30
+Output : -1
+
+Soln: 
+
+Idea:
+ 1.  Find the index of the peak/max element
+ 2. BS(arr,0,idx-1,asc) search here
+ 3. BS(arr,idx,size-1,desc) search here as well.
+
+
+
+Note: Rotated sorted array != Bitonic Array
+	{Revise}
+
+
+
+

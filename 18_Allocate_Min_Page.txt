@@ -1,0 +1,68 @@
+'''
+
+Given an array of numbers N and an integer k, your task is to split N into k partitions such that the maximum sum of any partition
+is minimized. Return this sum.
+
+For example, given N = [5, 1, 2, 7, 3, 4] and k = 3, you should return 8, since the optimal partition is [5, 1, 2], [7], [3, 4].
+
+'''
+
+Note: Hardest question of binary Search, i) Allocate minimum number of pages
+					ii) Pig and race wala
+			    		iii) Aggressive cow (spoj)
+					iv) Prata and roti (spoj)
+					v) EKO (spoj)
+					vi) Google kickstart A Q-3 2020
+					vii) 1482 Minimum Number of Days to Make m Bouquets
+					viii) 1283 Find the Smallest Divisor Given a Threshold
+					ix) 1231 Divide Chocolate
+					x) 1011 Capacity To Ship Packages In N Days
+					xi) 875 Koko Eating Bananas Minimize 
+					xii) 774 Max Distance to Gas Station
+					xiii) 410 Split Array Largest Sum
+					xiv) Painter's Partition
+Soln: 
+
+public static int minMaxPartitionSum(int[] nums, int k) {
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        for (int num : nums) {
+            max = Math.max(max, num);
+            sum += num;
+        }
+
+        int low= max;
+        int high = sum;
+	int res = -1;
+
+        while (low<=high) {
+            int mid = low + (high - low) / 2;
+            if (isValid(nums, k, mid)) {
+		res=mid;
+                high=mid-1;
+            } else {
+                left = mid + 1;
+            }
+        }
+
+        return res;
+    }
+
+public static boolean isValid(int[] nums, int k, int maxSum) {
+        int count = 1;
+        int currentSum = 0;
+
+        for (int num : nums) {
+            currentSum += num;
+            if (currentSum > maxSum) {
+                count++;
+                currentSum = num;
+            }
+
+	    if(count>k){
+		return false;
+	     }
+        }
+
+        return true;
+    }
