@@ -41,7 +41,7 @@ public static int minMaxPartitionSum(int[] nums, int k) {
 		res=mid;
                 high=mid-1;
             } else {
-                left = mid + 1;
+                low = mid + 1;
             }
         }
 
