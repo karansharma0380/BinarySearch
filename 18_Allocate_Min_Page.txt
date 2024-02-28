@@ -7,7 +7,7 @@ For example, given N = [5, 1, 2, 7, 3, 4] and k = 3, you should return 8, since 
 
 '''
 
-Note: Hardest question of binary Search, i) Allocate minimum number of pages
+Note: Hardest question of binary Search, i) Allocate minimum number of pages [Done InterviewBit]
 					ii) Pig and race wala
 			    		iii) Aggressive cow (spoj)
 					iv) Prata and roti (spoj)
@@ -16,11 +16,11 @@ Note: Hardest question of binary Search, i) Allocate minimum number of pages
 					vii) 1482 Minimum Number of Days to Make m Bouquets
 					viii) 1283 Find the Smallest Divisor Given a Threshold
 					ix) 1231 Divide Chocolate
-					x) 1011 Capacity To Ship Packages In N Days
+					x) 1011 Capacity To Ship Packages In N Days [Done InterviewBit]
 					xi) 875 Koko Eating Bananas Minimize 
 					xii) 774 Max Distance to Gas Station
 					xiii) 410 Split Array Largest Sum
-					xiv) Painter's Partition
+					xiv) Painter's Partition [Done InterviewBit]
 Soln: 
 
 public static int minMaxPartitionSum(int[] nums, int k) {
